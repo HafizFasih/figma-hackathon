@@ -4,12 +4,12 @@ import React from "react";
 
 const page = () => {
   return (
-    <div className="w-full mmd:px-20 px-5">
-      {/* <h1 className="text-3xl text-darkPrimary my-10 capitalize font-clash">
+    <div className="w-full mmd:px-20 px-5 py-5">
+      <h1 className="sm:text-3xl text-2xl text-darkPrimary my-10 capitalize font-clash">
         your shopping cart
-      </h1> */}
+      </h1>
       <GridCart />
-      {/* <SideDetails/> */}
+      <SideDetails/>
     </div>
   );
 };
@@ -47,7 +47,7 @@ const GridCart = () => {
   return (
     <div className="sm:h-[500px] h-[350px] w-full grid gap-y-4 xxs:grid-cols-[2fr_1fr_1fr] grid-cols-1 xxs:grid-rows-[1fr_2fr_2fr_2fr] grid-rows-3 text-darkPrimary my-10">
       {["product", "quantity", "total"].map((val, ind) => (
-        <h2 key={ind} className={`capitalize max-xs:hidden ${ind !== 0 && "text-end"}`}>
+        <h2 key={ind} className={`capitalize max-xxs:hidden ${ind !== 0 && "text-end"}`}>
           {val}
         </h2>
       ))}
@@ -59,8 +59,8 @@ const GridCart = () => {
             name={name}
             price={price}
           />
-          <h2 className="max-xs:hidden text-end max-sm:text-sm">1</h2>
-          <h2 className="max-xs:hidden text-end max-sm:text-sm">£85</h2>
+          <h2 className="max-xxs:hidden text-end max-sm:text-sm">1</h2>
+          <h2 className="max-xxs:hidden text-end max-sm:text-sm">£85</h2>
         </>
       ))}
     </div>
@@ -89,13 +89,13 @@ const Item = ({ name, image, description, price }: Item) => {
 
 const SideDetails = () => {
   return (
-    <div className="flex text-primary flex-col gap-3 items-end">
+    <div className="flex text-primary flex-col gap-4 items-end">
       <span className="flex gap-2 font-clash items-center">
         <h2>Subtotal</h2>
         <h2 className="text-darkPrimary text-lg">£210</h2>
       </span>
-      <p>Taxes and shipping are calculated at checkout</p>
-      <span className="w-36 flex justify-end">
+      <p className="max-sm:text-sm max-xxs:text-xs">Taxes and shipping are calculated at checkout</p>
+      <span className="xxs:w-36 w-full flex justify-end">
       <Button text="Go to checkout" theme="dark"/>
       </span>
     </div>

@@ -56,7 +56,7 @@ const Dimensions = () => {
       <span className="h-20 w-60 grid grid-cols-3 grid-rows-2">
         {["height", "width", "depth", "110cm", "75cm", "50cm"].map(
           (val, ind) => (
-            <span className="h-full w-full flex items-center">
+            <span key={ind} className="h-full w-full flex items-center">
               <h3
                 className={`capitalize ${
                   ind > 2 ? "text-text2" : "text-darkPrimary font-clash"

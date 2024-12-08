@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 
 const Hero = () => {
@@ -19,7 +20,9 @@ const TextSection = () => {
         <h1 className="sm:text-2xl text-2xl xs:w-96 font-clash">
           The furniture brand for the future, with timeless designs
         </h1>
+        <Link href="/products">
         <button className="bg-primary h-12 w-36 capitalize text-sm max-sm:hidden">view collection</button>
+        </Link>
       </div>
       <p className="max-sm:text-sm opacity-90">
         A new era in eco friendly furniture with Avelon, the French luxury

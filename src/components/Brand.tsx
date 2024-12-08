@@ -3,6 +3,7 @@ import { PiPlantLight } from "react-icons/pi";
 import { GoCreditCard } from "react-icons/go";
 import { VscWorkspaceTrusted } from "react-icons/vsc";
 import { TbTruckDelivery } from "react-icons/tb";
+import Link from "next/link";
 const cardsData = [
   {
     heading: "Next day as standard",
@@ -30,15 +31,18 @@ const cardsData = [
 const Brand = () => {
   return (
     <div className="w-full flex flex-col items-center sm:gap-10 gap-5 mmd:px-20 xs:px-5 px-2 py-14 max-sm:pt-5 text-darkPrimary">
-        <h2 className="xs:text-2xl text-xl capitalize font-clash">What makes our brand different</h2>
+      <h2 className="xs:text-2xl text-xl capitalize font-clash">
+        What makes our brand different
+      </h2>
       <div className="flex w-full justify-center flex-wrap items-center gap-5">
         {cardsData.map((val, ind) => (
-          <Card
-            key={ind}
-            heading={val.heading}
-            paragraph={val.paragraph}
-            Icon={val.Icon}
-          />
+          <Link key={ind} href="/about">
+            <Card
+              heading={val.heading}
+              paragraph={val.paragraph}
+              Icon={val.Icon}
+            />
+          </Link>
         ))}
       </div>
     </div>

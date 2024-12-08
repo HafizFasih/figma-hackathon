@@ -3,6 +3,7 @@ import React from "react";
 import productList from "../data";
 import Card from "@/components/Card";
 import { MdArrowDropDown } from "react-icons/md";
+import Link from "next/link";
 
 const page = () => {
   return (
@@ -14,11 +15,13 @@ const page = () => {
           <Card key={ind} image={image} name={name} price={price} size={size} />
         ))}
       </div>
-      <div className="w-full flex justify-center">
-        <button className="bg-lightGray h-12 w-36 capitalize text-sm">
-          view collection
-        </button>
-      </div>
+      <Link href="/products">
+        <div className="w-full flex justify-center">
+          <button className="bg-lightGray h-12 w-36 capitalize text-sm">
+            view collection
+          </button>
+        </div>
+      </Link>
     </div>
   );
 };
@@ -43,7 +46,10 @@ const Bar = () => {
         {["category", "product type", "price", "brand"].map((val, ind) => (
           <li
             key={ind}
-            className={`flex items-center capitalize max-xs:px-3 max-xs:py-2 text-darkPrimary max-md:text-xs ${ind > 1 ? "max-xs:hidden" : "max-xs:bg-lightGray"}`}>
+            className={`flex items-center capitalize max-xs:px-3 max-xs:py-2 text-darkPrimary max-md:text-xs ${
+              ind > 1 ? "max-xs:hidden" : "max-xs:bg-lightGray"
+            }`}
+          >
             <h3>{val}</h3>
             <MdArrowDropDown className="h-4 w-4" />
           </li>

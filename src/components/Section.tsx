@@ -1,6 +1,7 @@
 import Image from "next/image";
 import React from "react";
 import Button from "./Button";
+import Link from "next/link";
 
 interface PropsType {
   direction: boolean;
@@ -49,14 +50,16 @@ const TextSection = ({
           London interior design community.
         </p>
       </span>
+      <Link href="/about">
       <Button text="Get in touch" theme="light" />
+      </Link>
     </section>
   );
 };
 const ImageSection = ({ image }: { image: string }) => {
   return (
-    <section className="relative h-[450px] md:w-1/2 w-full">
-      <Image src={image} alt="" fill={true} className="object-cover" />
+    <section className="relative h-[450px] md:w-1/2 w-full overflow-hidden">
+      <Image src={image} alt="" fill={true} className="object-cover hover:grayscale duration-500 cursor-pointer" />
     </section>
   );
 };

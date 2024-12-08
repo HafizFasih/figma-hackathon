@@ -1,5 +1,6 @@
 import React from "react";
 import Card from "./Card";
+import Link from "next/link";
 
 interface CardType {
   image: string;
@@ -47,9 +48,11 @@ const Ceramics = ({ heading }: { heading?: string }) => {
         ))}
       </div>
       <div className="w-full flex justify-center">
-        <button className="bg-lightGray h-12 w-36 capitalize text-sm">
-          view collection
-        </button>
+        <Link href="/products">
+          <button className="bg-lightGray h-12 w-36 capitalize text-sm">
+            view collection
+          </button>
+        </Link>
       </div>
     </div>
   );

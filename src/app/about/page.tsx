@@ -2,6 +2,7 @@ import Brand from "@/components/Brand";
 import Club from "@/components/Club";
 import Section from "@/components/Section";
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 
 const page = () => {
@@ -12,9 +13,11 @@ const page = () => {
           A brand built on the love of craftmanship, quality and
           outstanding customer service
         </h1>
+        <Link href="/products">
         <button className="bg-lightGray h-12 sm:w-36 w-full sm:text-sm text-xs">
           View our products
         </button>
+        </Link>
       </section>
       <ImageSection />
       <Section
@@ -51,9 +54,11 @@ const TextSection = () => {
         A global brand with local beginnings, our story begain in a small studio in South London in early 2014
         </p>
       </div>
-      <button className="bg-primary h-12 md:w-36 w-full capitalize text-sm">
+      <Link href="/products">
+        <button className="bg-primary h-12 md:w-36 w-full capitalize text-sm">
         view collection
       </button>
+      </Link>
     </section>
   );
 };

@@ -8,7 +8,7 @@ const page = () => {
   return (
     <div>
       <section className="sm:h-48 w-full flex max-sm:flex-col max-sm:gap-10 max-sm:pt-10 items-center justify-between md:px-24 px-5">
-        <h1 className="sm:text-2xl text-xl font-clash text-darkPrimary sm:w-[500px]">
+        <h1 className="sm:text-2xl text-xl font-clash text-darkPrimary sm:w-[500px] max-xxs:px-3">
           A brand built on the love of craftmanship, quality and
           outstanding customer service
         </h1>

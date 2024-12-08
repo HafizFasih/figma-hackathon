@@ -12,8 +12,8 @@ const Header = () => {
         <h1 className="capitalize text-2xl font-clash">avion</h1>
         <span className="flex gap-4 items-center">
           <IoIosSearch className="h-5 w-5 sm:hidden" />
-          <IoCartOutline className="h-5 w-5" />
-          <FaRegUserCircle className="h-5 w-5" />
+          <IoCartOutline className="h-5 w-5 max-xs:hidden" />
+          <FaRegUserCircle className="h-5 w-5 max-xs:hidden" />
           <MobileNavbar/>
         </span>
       </header>

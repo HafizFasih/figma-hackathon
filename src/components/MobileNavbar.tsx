@@ -11,7 +11,7 @@ const MobileNavbar = () => {
         <IoMenuSharp className="h-4/5 w-4/5" />
       </span>
       <span
-        className={`${display ? "translate-x-0" : "-translate-x-full"} duration-500 absolute top-0 left-0 bg-black/90 h-screen w-4/5 sm:hidden inline-block`}
+        className={`${display ? "translate-x-0" : "-translate-x-full"} duration-500 absolute z-50 top-0 left-0 bg-black/90 h-screen w-4/5 sm:hidden inline-block`}
       >
         <ul className="h-full flex flex-col justify-evenly items-center">
           {["home", "about", "products", "cart"].map((val, ind) => (

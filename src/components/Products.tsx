@@ -32,7 +32,7 @@ const Products = () => {
   return (
     <div className="w-full text-darkPrimary flex flex-col gap-4 my-16 mmd:px-20 px-5">
       <h2 className="xs:text-3xl text-2xl font-clash">Our popular products</h2>
-      <div className="w-full flex justify-center max-lg:overflow-x-scroll">
+      <div className="w-full flex max-lg:overflow-x-scroll">
         <div className="flex xs:w-[1000px] w-[1100px] justify-center gap-5">
           {data.map((val, ind) => (
             <Card

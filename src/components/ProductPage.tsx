@@ -43,8 +43,8 @@ const DetailsSection = () => {
           ))}
         </ul>
       </span>
-      <Dimensions/>
-      <Amount/>
+      <Dimensions />
+      <Amount />
     </section>
   );
 };
@@ -73,17 +73,26 @@ const Dimensions = () => {
 };
 
 const Amount = () => {
-    return(
-        <div className="w-full flex justify-between">
-            <span className="flex items-center gap-4">
-                <h3 className="text-lg capitalize text-darkPrimary font-clash">amount:</h3>
-                <span className="flex w-28 h-12 bg-lightGray items-center justify-around">
-                    {["-", "1", "+"].map((val, ind) => (
-                        <span key={ind} className={`${val === "1" ? "text-darkPrimary" : "text-text2/50"}`}>{val}</span>
-                    ))}
-                </span>
+  return (
+    <div className="w-full flex justify-between">
+      <span className="flex items-center gap-4">
+        <h3 className="text-lg capitalize text-darkPrimary font-clash">
+          amount:
+        </h3>
+        <span className="flex w-28 h-12 bg-lightGray items-center justify-around">
+          {["-", "1", "+"].map((val, ind) => (
+            <span
+              key={ind}
+              className={`${
+                val === "1" ? "text-darkPrimary" : "text-text2/50"
+              }`}
+            >
+              {val}
             </span>
-            <Button text="add to cart" theme="dark"/>
-        </div>
-    )
-}
+          ))}
+        </span>
+      </span>
+      <Button text="add to cart" theme="dark" />
+    </div>
+  );
+};

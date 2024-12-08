@@ -36,22 +36,24 @@ const Products = () => {
       <div className="w-full flex sm:justify-center max-lg:overflow-x-scroll">
         <div className="flex xs:w-[1000px] w-[1100px] justify-center gap-5">
           {data.map((val, ind) => (
-            <Card
-              key={ind}
-              image={val.image}
-              name={val.name}
-              price={val.price}
-              size={val.size}
-            />
+            <Link href="/products/1">
+              <Card
+                key={ind}
+                image={val.image}
+                name={val.name}
+                price={val.price}
+                size={val.size}
+              />
+            </Link>
           ))}
         </div>
       </div>
       <Link href="/products">
-      <div className="w-full flex justify-center">
-        <button className="bg-lightGray h-12 w-36 capitalize text-sm">
-          view collection
-        </button>
-      </div>
+        <div className="w-full flex justify-center">
+          <button className="bg-lightGray h-12 w-36 capitalize text-sm">
+            view collection
+          </button>
+        </div>
       </Link>
     </div>
   );

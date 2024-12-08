@@ -38,9 +38,8 @@ const Ceramics = ({ heading }: { heading?: string }) => {
       </h2>
       <div className="flex w-full justify-center gap-5 flex-wrap">
         {data.map((val, ind) => (
-          <Link href="/products/1">
+          <Link key={ind} href="/products/1">
             <Card
-              key={ind}
               image={val.image}
               name={val.name}
               price={val.price}

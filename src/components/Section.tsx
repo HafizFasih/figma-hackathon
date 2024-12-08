@@ -15,7 +15,7 @@ const Section = ({
   return (
     <div
       className={`w-full flex ${
-        direction ? "md:flex-row flex-col" : "flex-row-reverse"
+        direction ? "md:flex-row flex-col" : "md:flex-row-reverse flex-col-reverse"
       } bg-lightGray`}
     >
       <TextSection

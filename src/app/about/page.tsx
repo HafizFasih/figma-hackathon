@@ -7,7 +7,7 @@ import React from "react";
 const page = () => {
   return (
     <div>
-      <section className="h-48 w-full flex items-center justify-between px-24">
+      {/* <section className="h-48 w-full flex items-center justify-between px-24">
         <h1 className="text-2xl font-clash text-darkPrimary">
           A brand built on the love of craftmanship,<br></br> quality and
           outstanding customer service
@@ -15,7 +15,7 @@ const page = () => {
         <button className="bg-lightGray h-12 w-36 capitalize text-sm">
           view collection
         </button>
-      </section>
+      </section> */}
       <ImageSection />
       <Section
         direction={false}
@@ -31,9 +31,9 @@ const page = () => {
 export default page;
 const ImageSection = () => {
   return (
-    <div className="flex px-20 gap-4 py-10">
+    <div className="flex mmd:px-20 px-5 max-md:flex-col sm:gap-4 gap-5 py-10">
       <TextSection />
-      <section className="relative h-[450px] w-1/2">
+      <section className="relative md:h-[450px] h-[300px] md:w-1/2 w-full">
         <Image src="/sofa2.png" alt="" fill={true} className="object-cover" />
       </section>
     </div>
@@ -42,16 +42,16 @@ const ImageSection = () => {
 
 const TextSection = () => {
   return (
-    <section className="h-[450px] w-1/2 bg-darkPrimary text-white py-12 flex flex-col justify-between px-10">
+    <section className="md:h-[450px] max-md:gap-10 md:w-1/2 w-full bg-darkPrimary text-white sm:py-12 py-8 flex flex-col justify-between sm:px-10 px-5">
       <div className="flex flex-col gap-8">
-        <h1 className="text-2xl font-clash">
+        <h1 className="xs:text-2xl text-xl font-clash">
           It started with a small idea
         </h1>
-        <p className="">
+        <p className="max-sm:text-sm">
         A global brand with local beginnings, our story begain in a small studio in South London in early 2014
         </p>
       </div>
-      <button className="bg-primary h-12 w-36 capitalize text-sm">
+      <button className="bg-primary h-12 md:w-36 w-full capitalize text-sm">
         view collection
       </button>
     </section>

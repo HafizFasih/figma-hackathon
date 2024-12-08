@@ -7,15 +7,15 @@ import React from "react";
 const page = () => {
   return (
     <div>
-      {/* <section className="h-48 w-full flex items-center justify-between px-24">
-        <h1 className="text-2xl font-clash text-darkPrimary">
-          A brand built on the love of craftmanship,<br></br> quality and
+      <section className="sm:h-48 w-full flex max-sm:flex-col max-sm:gap-10 max-sm:pt-10 items-center justify-between md:px-24 px-5">
+        <h1 className="sm:text-2xl text-xl font-clash text-darkPrimary sm:w-[500px]">
+          A brand built on the love of craftmanship, quality and
           outstanding customer service
         </h1>
-        <button className="bg-lightGray h-12 w-36 capitalize text-sm">
-          view collection
+        <button className="bg-lightGray h-12 sm:w-36 w-full sm:text-sm text-xs">
+          View our products
         </button>
-      </section> */}
+      </section>
       <ImageSection />
       <Section
         direction={false}

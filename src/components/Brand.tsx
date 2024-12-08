@@ -29,7 +29,7 @@ const cardsData = [
 ];
 const Brand = () => {
   return (
-    <div className="w-full flex flex-col items-center sm:gap-10 gap-5 mmd:px-20 xs:px-5 px-2 py-14 text-darkPrimary">
+    <div className="w-full flex flex-col items-center sm:gap-10 gap-5 mmd:px-20 xs:px-5 px-2 py-14 max-sm:pt-5 text-darkPrimary">
         <h2 className="xs:text-2xl text-xl capitalize font-clash">What makes our brand different</h2>
       <div className="flex w-full justify-center flex-wrap items-center gap-5">
         {cardsData.map((val, ind) => (

@@ -4,12 +4,12 @@ import React from "react";
 
 const page = () => {
   return (
-    <div className="h-screen w-full px-20">
-      <h1 className="text-3xl text-darkPrimary my-10 capitalize font-clash">
+    <div className="w-full mmd:px-20 px-5">
+      {/* <h1 className="text-3xl text-darkPrimary my-10 capitalize font-clash">
         your shopping cart
-      </h1>
+      </h1> */}
       <GridCart />
-      <SideDetails/>
+      {/* <SideDetails/> */}
     </div>
   );
 };
@@ -35,13 +35,19 @@ const data = [
     price: "£85",
     description: "Beautiful and simple this is one for the classics",
   },
+  {
+    name: "Basic white vase",
+    image: "/plant.png",
+    price: "£85",
+    description: "Beautiful and simple this is one for the classics",
+  },
 ];
 
 const GridCart = () => {
   return (
-    <div className="h-80 w-full grid gap-y-4 grid-cols-[2fr_1fr_1fr] grid-rows-[1fr_2fr_2fr] text-darkPrimary">
+    <div className="sm:h-[500px] h-[350px] w-full grid gap-y-4 xxs:grid-cols-[2fr_1fr_1fr] grid-cols-1 xxs:grid-rows-[1fr_2fr_2fr_2fr] grid-rows-3 text-darkPrimary my-10">
       {["product", "quantity", "total"].map((val, ind) => (
-        <h2 key={ind} className={`capitalize ${ind !== 0 && "text-end"}`}>
+        <h2 key={ind} className={`capitalize max-xs:hidden ${ind !== 0 && "text-end"}`}>
           {val}
         </h2>
       ))}
@@ -53,8 +59,8 @@ const GridCart = () => {
             name={name}
             price={price}
           />
-          <h2 className="text-end">1</h2>
-          <h2 className="text-end">£85</h2>
+          <h2 className="max-xs:hidden text-end max-sm:text-sm">1</h2>
+          <h2 className="max-xs:hidden text-end max-sm:text-sm">£85</h2>
         </>
       ))}
     </div>
@@ -63,19 +69,19 @@ const GridCart = () => {
 
 const Item = ({ name, image, description, price }: Item) => {
   return (
-    <span className="w-72 h-full flex">
+    <span className="sm:w-72 w-60 h-full flex">
       <span className="h-full w-2/5 relative flex">
         <Image
           src={image}
           alt=""
           fill={true}
-          className="object-contain object-left"
+          className="sm:object-contain object-cover object-left"
         />
       </span>
-      <span className="w-3/5 flex justify-between py-2 flex-col">
-        <h2 className="text-lg capitalize">{name}</h2>
-        <p className="text-sm">{description}</p>
-        <h3>{price}</h3>
+      <span className="w-3/5 flex justify-between py-2 flex-col max-sm:ml-2">
+        <h2 className="sm:text-lg text-nr capitalize">{name}</h2>
+        <p className="sm:text-sm text-xs">{description}</p>
+        <h3 className="max-sm:text-sm">{price}</h3>
       </span>
     </span>
   );

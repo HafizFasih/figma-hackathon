@@ -56,6 +56,7 @@ const GridCart = () => {
             price={price}
             id={_id}
             category={category}
+            quantity={quantity}
           />
           <h2 className="max-xxs:hidden text-end max-sm:text-sm">{quantity}</h2>
           <h2 className="max-xxs:hidden text-end max-sm:text-sm">
@@ -74,17 +75,18 @@ interface Item {
   price: string;
   description: string;
   category: string;
+  quantity: number;
 }
 
-const Item = ({ name, image, description, price, id, category }: Item) => {
+const Item = ({ name, image, description, price, id, category, quantity }: Item) => {
   const { removeProduct } = useContext(CartContext)!;
   const deleteProduct = () => {
     removeProduct(id);
   };
   return (
-    <span className="sm:w-72 w-60 h-full flex">
+    <span className="sm:w-72 xxs:w-60 w-full h-full flex relative">
       <span className="h-full w-2/5 relative flex bg-darkPrimary mr-1">
-        <Image src={image} alt="" fill={true} className="object-cover" placeholder="blur"  />
+        <Image src={image} alt="" fill={true} className="object-cover" />
         <RxCrossCircled
           onClick={deleteProduct}
           className="top-0 left-0 text-red-500 bg-white z-10 relative -translate-x-1/2 -translate-y-1/2 h-5 w-5 cursor-pointer hover:bg-red-500 hover:text-white rounded-full"
@@ -97,6 +99,7 @@ const Item = ({ name, image, description, price, id, category }: Item) => {
         <p className="sm:text-sm text-xs">{description}</p>
         <h3 className="max-sm:text-sm">£{price}</h3>
       </span>
+      <h3 className="xxs:hidden absolute bottom-[6px] text-sm right-2">{quantity}</h3>
     </span>
   );
 };

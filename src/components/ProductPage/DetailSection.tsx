@@ -6,7 +6,6 @@ import Dimensions from "./Dimensions";
 
 const DetailsSection = ({ id, product }: { id: string; product: any }) => {
   const [amount, setAmount] = useState<number>(1);
-  console.log(product);
   return (
     <section className="flex flex-col md:w-1/2 w-full text-text2 sm:gap-5 gap-3 mmd:px-14 px-5 py-5">
       <h1 className="sm:text-4xl text-2xl text-darkPrimary font-clash">

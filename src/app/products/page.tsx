@@ -47,7 +47,7 @@ export default page;
 const Heading = () => {
   return (
     <div className="relative w-full sm:h-48 h-32 bg-black">
-      <Image placeholder="blur" src="/head.jpeg" alt="" fill={true} className="object-cover" />
+      <Image src="/head.jpeg" alt="" fill={true} className="object-cover" />
       <h1 className="absolute xs:left-10 left-1/2 xs:bottom-5 bottom-1/2 max-xs:translate-y-1/2 max-xs:-translate-x-1/2 text-3xl text-white font-clash max-xs:w-52">
         All products
       </h1>

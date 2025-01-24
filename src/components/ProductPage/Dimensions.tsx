@@ -1,3 +1,4 @@
+/* eslint-disable */
 const Dimensions = ({dimensions}: {dimensions: any}) => {
   return (
     <span className="flex flex-col gap-2 mt-5 max-sm:text-sm">

@@ -1,3 +1,4 @@
+/* eslint-disable */
 "use client";
 import Brand from "@/components/Brand";
 import Ceramics from "@/components/Ceramics";

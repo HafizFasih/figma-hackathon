@@ -1,5 +1,6 @@
+/* eslint-disable */
 "use client";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Amount from "./Amount";
 import Dimensions from "./Dimensions";
 

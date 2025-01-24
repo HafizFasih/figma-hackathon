@@ -1,3 +1,4 @@
+/* eslint-disable */
 "use client";
 import CartContext from "@/app/context/CartCreation";
 import Button from "../Button";

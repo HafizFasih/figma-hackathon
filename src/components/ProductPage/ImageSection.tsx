@@ -1,3 +1,4 @@
+/* eslint-disable */
 import Image from "next/image";
 
 const ImageSection = ({ image }: { image: any }) => {

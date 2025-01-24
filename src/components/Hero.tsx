@@ -36,7 +36,7 @@ const TextSection = () => {
 const ImageSection = () => {
   return (
     <section className="relative sm:h-[450px] max-xs:hidden h-72 md:w-2/5 w-full bg-[#83A9AC]">
-      <Image src="/hero.png" alt="" fill={true} className="object-contain object-center" />
+      <Image placeholder="blur"  src="/hero.png" alt="" fill={true} className="object-contain object-center" />
     </section>
   );
 };

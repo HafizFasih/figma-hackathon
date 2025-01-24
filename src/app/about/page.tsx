@@ -37,7 +37,7 @@ const ImageSection = () => {
     <div className="flex mmd:px-20 px-5 max-md:flex-col sm:gap-4 gap-5 py-10">
       <TextSection />
       <section className="relative md:h-[450px] h-[300px] md:w-1/2 w-full">
-        <Image src="/sofa2.png" alt="" fill={true} className="object-cover" />
+        <Image src="/sofa2.png" alt="" fill={true} className="object-cover" placeholder="blur" />
       </section>
     </div>
   );

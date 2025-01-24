@@ -84,7 +84,7 @@ const Item = ({ name, image, description, price, id, category }: Item) => {
   return (
     <span className="sm:w-72 w-60 h-full flex">
       <span className="h-full w-2/5 relative flex bg-darkPrimary mr-1">
-        <Image src={image} alt="" fill={true} className="object-cover" />
+        <Image src={image} alt="" fill={true} className="object-cover" placeholder="blur"  />
         <RxCrossCircled
           onClick={deleteProduct}
           className="top-0 left-0 text-red-500 bg-white z-10 relative -translate-x-1/2 -translate-y-1/2 h-5 w-5 cursor-pointer hover:bg-red-500 hover:text-white rounded-full"

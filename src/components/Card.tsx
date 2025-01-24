@@ -18,6 +18,7 @@ const Card = ({ image, name, price }: CardType) => {
       >
         <Image
           src={image}
+          placeholder="blur" 
           alt=""
           fill={true}
           className={`object-cover duration-500 ${

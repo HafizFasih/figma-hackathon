@@ -3,7 +3,7 @@ const Dimensions = ({dimensions}: {dimensions: any}) => {
   return (
     <span className="flex flex-col gap-2 mt-5 max-sm:text-sm">
       <h3 className="text-darkPrimary capitalize font-clash text-nr">
-        dimensions
+        Dimensions
       </h3>
       <span className="h-20 w-60 grid grid-cols-3 grid-rows-2">
         {dimensions && ["height", "width", "depth", dimensions.height, dimensions.width, dimensions.depth].map(

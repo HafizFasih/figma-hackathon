@@ -2,49 +2,20 @@ import React from "react";
 import Card from "./Card";
 import Link from "next/link";
 
-interface CardType {
-  image: string;
-  size: "single" | "double";
-  name: string;
-  price: string;
-}
-
-const data: CardType[] = [
-  {
-    name: "The Poplar suede sofa",
-    price: "£980",
-    size: "double",
-    image: "/sofa.png",
-  },
-  {
-    name: "The Dandy chair",
-    price: "£250",
-    size: "single",
-    image: "/hero.png",
-  },
-  {
-    name: "The Dandy chair",
-    price: "£250",
-    size: "single",
-    image: "/chair.png",
-  },
-];
-const Products = () => {
+const Products = ({ products }: { products: any }) => {
   return (
     <div className="w-full text-darkPrimary flex flex-col gap-4 my-16 mmd:px-20 px-5">
       <h2 className="xs:text-3xl text-2xl font-clash">Our popular products</h2>
       <div className="w-full flex sm:justify-center max-lg:overflow-x-scroll">
         <div className="flex xs:w-[1000px] w-[1100px] justify-center gap-5">
-          {data.map((val, ind) => (
-            <Link key={ind} href="/products/1">
-              <Card
-                image={val.image}
-                name={val.name}
-                price={val.price}
-                size={val.size}
-              />
-            </Link>
-          ))}
+          {products
+            .sort(() => Math.random() - 0.5)
+            .slice(0, 4)
+            .map(({ imageUrl, name, price, _id, category }: any, ind: any) => (
+              <Link key={ind} href={`/products/${category}/${_id}`}>
+                <Card image={imageUrl} name={name} price={price} />
+              </Link>
+            ))}
         </div>
       </div>
       <Link href="/products">

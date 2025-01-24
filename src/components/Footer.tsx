@@ -30,6 +30,7 @@ const company = [
   "Privacy",
   "Returns policy",
 ];
+
 const Footer = () => {
   return (
     <footer className="w-full pt-10 bg-darkPrimary text-white mmd:px-20 sm:px-10 px-5">

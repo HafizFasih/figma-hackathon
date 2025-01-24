@@ -6,26 +6,26 @@ import { MdArrowDropDown } from "react-icons/md";
 import Link from "next/link";
 import { client } from "@/sanity/lib/sanityClient";
 
-const query = `*[_type == "product"]{
-  category, name, slug, "imageUrl": image.asset->url, price, quantity, tags, description, features, dimensions, _id
-}`;
-
-const page = () => {
+const page = ({ params }: { params: { category: string } }) => {
   const [products, setProducts] = useState([]);
+  const query = `*[_type == "product" ${params.category ? `&& category == "${params.category}"` : ""}]{
+    category, name, slug, "imageUrl": image.asset->url, price, quantity, tags, description, features, dimensions, _id
+  }`;
   useEffect(() => {
     (async () => {
       const data = await client.fetch(query);
       setProducts(data);
+      console.log(data);
     })();
   }, []);
   return (
     <div className="w-full pb-10">
-      <Heading />
+      <Heading title={params.category}/>
       <Bar />
       <div className="w-full flex flex-wrap gap-10 items-center justify-center xs:pt-10 pt-5">
         {products &&
-          products.map(({ imageUrl, name, price, _id, category }, ind) => (
-            <Link href={`/products/${category}/${_id}`}>
+          products.map(({ imageUrl, name, price, _id }, ind) => (
+            <Link href={`/products/${params.category}/${_id}`}>
               <Card key={ind} image={imageUrl} name={name} price={price} />
             </Link>
           ))}
@@ -43,12 +43,12 @@ const page = () => {
 
 export default page;
 
-const Heading = () => {
+const Heading = ({title}: {title: string}) => {
   return (
     <div className="relative w-full sm:h-48 h-32 bg-black">
       <Image src="/head.jpeg" alt="" fill={true} className="object-cover" />
-      <h1 className="absolute xs:left-10 left-1/2 xs:bottom-5 bottom-1/2 max-xs:translate-y-1/2 max-xs:-translate-x-1/2 text-3xl text-white font-clash max-xs:w-52">
-        All products
+      <h1 className="absolute xs:left-10 left-1/2 xs:bottom-5 bottom-1/2 max-xs:translate-y-1/2 max-xs:-translate-x-1/2 text-3xl text-white font-clash max-xs:w-52 capitalize">
+        {title.replace("-", " ")}
       </h1>
     </div>
   );

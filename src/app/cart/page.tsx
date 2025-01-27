@@ -123,7 +123,9 @@ const SideDetails = () => {
         Taxes and shipping are calculated at checkout
       </p>
       <span className="xxs:w-36 w-full flex justify-end">
+        <Link href="/checkout">
         <Button text="Go to checkout" theme="dark" />
+        </Link>
       </span>
     </div>
   );

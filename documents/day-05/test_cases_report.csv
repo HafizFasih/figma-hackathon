@@ -1,0 +1,12 @@
+Test Case ID,Test Case Description,Test Steps,Expected Result,Actual Result,Status,Severity Level,Assigned To,Remarks
+TC001,Validate product listing page,Open product page > Verify products,Products displayed correctly,Products displayed correctly,Passed,Low,-,No issues found
+TC002,Test API error handling,Disconnect API > Refresh page,Show fallback UI with error message,Error message shown,Passed,Medium,-,Handled gracefully
+TC003,Check cart functionality,Add product to cart > Verify cart contents,Cart updates with added product,Cart updates as expected,Passed,High,-,Works as expected
+TC004,Ensure responsiveness on mobile,Resize browser window > Check layout,Layout adjusts properly to screen size,Responsive layout working as intended,Passed,Medium,-,Test successful
+TC005,Validate image compression,"Add loading=""lazy"" to image tags",Images load only when visible on the screen,Image size reduced as expected,Passed,Low,-,Optimization successful
+TC006,Analyze website performance,Run Lighthouse audit > Review metrics,Performance issues identified and resolved,Performance improved,Passed,Medium,-,Metrics improved
+TC007,Cross-browser consistency check,Test on Chrome and Edge,Consistent rendering and functionality,Consistent across all tested browsers,Passed,Medium,-,No discrepancies found
+TC008,Simulate mobile device layout,Use responsive tools > Verify design,Proper layout on different screen sizes,Responsive design validated,Passed,Medium,-,Passed manual testing
+TC009,Validate input validation mechanisms,Submit invalid inputs > Check error handling,Error messages displayed,Input validation working correctly,Passed,High,-,Secure input handling
+TC010,Ensure secure API communication,Verify HTTPS usage > Check API keys,Secure communication and data storage,HTTPS and environment variables verified,Passed,High,-,Security measures in place
+TC011,Simulate real-world user actions,"Perform tasks like browsing, adding to cart, checking out",Smooth functionality for all tasks,Real-world usage validated,Passed,High,-,Usability confirmed

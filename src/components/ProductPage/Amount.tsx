@@ -6,6 +6,7 @@ import { useContext, useEffect, useState } from "react";
 import { GoHeart } from "react-icons/go";
 import { GoHeartFill } from "react-icons/go";
 import WishlistContext from "@/app/context/WishlistCreation";
+import { ToastContainer, toast } from "react-toastify";
 
 const Amount = ({
   id,
@@ -32,25 +33,32 @@ const Amount = ({
       product.quantity = amount;
       addProduct(product);
       setIsAdded(true);
+      toast("Product has been added to Cart");
     } else {
       removeProduct(id);
       setIsAdded(false);
+      toast("Product has been removed from Cart");
     }
   };
 
   const addToWishlist = () => {
     setIsFilledHeart((val) => !val);
-    !isFilledHeart
-      ? addItem({
-          name: product.name,
-          _id: product._id,
-          description: product.description,
-          image: product.imageUrl,
-        })
-      : removeItem(id);
+    if (!isFilledHeart) {
+      addItem({
+        name: product.name,
+        _id: product._id,
+        description: product.description,
+        image: product.imageUrl,
+      });
+      toast("Added to Wishlist");
+    } else {
+      removeItem(id);
+      toast("Removed to Wishlist");
+    }
   };
   return (
     <div className="w-full flex justify-between">
+      <ToastContainer />
       <span className="flex items-center gap-4">
         <h3 className="capitalize text-darkPrimary font-clash">amount:</h3>
         <span className="flex sm:w-28 w-20 sm:h-12 h-8 bg-lightGray items-center justify-around">

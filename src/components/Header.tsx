@@ -11,6 +11,7 @@ import { RiContactsBook3Line } from "react-icons/ri";
 import { IoMdArrowDropleft } from "react-icons/io";
 import SearchList from "./SearchList";
 import { client } from "@/sanity/lib/sanityClient";
+import { useRouter } from "next/navigation";
 
 interface ListItem {
   name: string;
@@ -44,6 +45,7 @@ const Header = () => {
   const [list, setList] = useState<ListItem[]>([]);
   const [searchText, setSearchText] = useState<string>("");
   const [filteredList, setFilteredList] = useState<ListItem[]>([]);
+  const router = useRouter();
 
   useEffect(() => {
     (async () => {
@@ -67,11 +69,29 @@ const Header = () => {
       )
     );
   };
+
+  const handleClick = () => {
+    if (openSearch) {
+      if (filteredList.length > 0) {
+        const { name, _id, category } = filteredList[0];
+        name.toLowerCase().includes(searchText.toLowerCase())
+          ? router.push(`/products/${category}/${_id}`)
+          : router.push(`/products`);
+      }
+      setOpenSearch(false);
+    } else {
+      setOpenSearch(true);
+    }
+  };
   return (
     <>
       <header className="relative h-14 w-full sm:px-10 px-5 flex items-center justify-between border-b border-text/40">
         <span className="relative flex items-center">
-          <SearchList list={filteredList} isSearch={openSearch} setSearch={setOpenSearch} />
+          <SearchList
+            list={filteredList}
+            isSearch={openSearch}
+            setSearch={setOpenSearch}
+          />
           <input
             type="text"
             placeholder="Search"
@@ -80,7 +100,7 @@ const Header = () => {
             className={`border-t border-b border-l border-black px-2 duration-300 focus:outline-none h-7 ${openSearch ? "w-40 opacity-100" : "w-0 opacity-0"}`}
           />
           <span
-            onClick={() => setOpenSearch(true)}
+            onClick={handleClick}
             className={`h-7 flex items-center justify-center w-8 ${openSearch && "border-t border-b border-r border-black"}`}
           >
             <IoIosSearch className="h-5 w-5 max-sm:hidden cursor-pointer" />

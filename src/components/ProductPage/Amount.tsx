@@ -3,6 +3,9 @@
 import CartContext from "@/app/context/CartCreation";
 import Button from "../Button";
 import { useContext, useEffect, useState } from "react";
+import { GoHeart } from "react-icons/go";
+import { GoHeartFill } from "react-icons/go";
+import WishlistContext from "@/app/context/WishlistCreation";
 
 const Amount = ({
   id,
@@ -16,10 +19,12 @@ const Amount = ({
   setAmount: React.Dispatch<React.SetStateAction<number>>;
 }) => {
   const { addProduct, products, removeProduct } = useContext(CartContext)!;
+  const { addItem, removeItem, items } = useContext(WishlistContext)!;
   const [isAdded, setIsAdded] = useState<boolean>(false);
-
+  const [isFilledHeart, setIsFilledHeart] = useState<boolean>(false);
   useEffect(() => {
     setIsAdded(products.some((val: any) => val._id === id));
+    setIsFilledHeart(items.some((val: any) => val._id === id));
   }, []);
 
   const addToCart = () => {
@@ -31,6 +36,18 @@ const Amount = ({
       removeProduct(id);
       setIsAdded(false);
     }
+  };
+
+  const addToWishlist = () => {
+    setIsFilledHeart((val) => !val);
+    !isFilledHeart
+      ? addItem({
+          name: product.name,
+          _id: product._id,
+          description: product.description,
+          image: product.imageUrl,
+        })
+      : removeItem(id);
   };
   return (
     <div className="w-full flex justify-between">
@@ -53,8 +70,20 @@ const Amount = ({
           ))}
         </span>
       </span>
-      <span onClick={addToCart}>
-        <Button text={!isAdded ? "Add to cart" : "Remove"} theme="dark" />
+      <span className="flex items-center justify-center gap-4 cursor-pointer">
+        <span
+          onClick={addToWishlist}
+          className="bg-darkPrimary h-10 w-10 flex items-center justify-center text-white"
+        >
+          {isFilledHeart ? (
+            <GoHeartFill className="h-6 w-6" />
+          ) : (
+            <GoHeart className="h-6 w-6" />
+          )}
+        </span>
+        <span onClick={addToCart}>
+          <Button text={!isAdded ? "Add to cart" : "Remove"} theme="dark" />
+        </span>
       </span>
     </div>
   );

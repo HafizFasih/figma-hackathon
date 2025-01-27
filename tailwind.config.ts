@@ -18,17 +18,20 @@ const config: Config = {
         text2: "#505977",
       },
       screens: {
-        'xxs':'400px',
-        'xs': '480px', 
-        'sm': '640px', 
-        'md': '850px', 
-        'mmd': '1000px',
-        'lg': '1200px', 
-        'xl': '1440px',
+        xxs: "400px",
+        xs: "480px",
+        sm: "640px",
+        md: "850px",
+        mmd: "1000px",
+        lg: "1200px",
+        xl: "1440px",
       },
-      fontSize:{
-        'nr': "16px"
-      }
+      fontSize: {
+        nr: "16px",
+      },
+      spacing: {
+        search: "calc(100% + 4px)",
+      },
     },
   },
   plugins: [],

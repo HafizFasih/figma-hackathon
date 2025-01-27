@@ -4,6 +4,7 @@ import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import CartProvider from "@/app/context/CartContext";
+import WishlistProvider from "./context/WishlistContext";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -29,17 +30,19 @@ export default function RootLayout({
 }>) {
   return (
     <CartProvider>
-      <html lang="en">
-        <body
-          className={`${geistSans.variable} ${clashDisplay.variable} antialiased flex justify-center`}
-        >
-          <div className="xl:w-[1500px] w-full">
-            <Header />
-            {children}
-            <Footer />
-          </div>
-        </body>
-      </html>
+      <WishlistProvider>
+        <html lang="en">
+          <body
+            className={`${geistSans.variable} ${clashDisplay.variable} antialiased flex justify-center`}
+          >
+            <div className="xl:w-[1500px] w-full">
+              <Header />
+              {children}
+              <Footer />
+            </div>
+          </body>
+        </html>
+      </WishlistProvider>
     </CartProvider>
   );
 }

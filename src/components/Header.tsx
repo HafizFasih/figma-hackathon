@@ -53,6 +53,12 @@ const Header = () => {
       setList(data);
     })();
   }, []);
+
+  useEffect(() => {
+    setSearchText("");
+    setFilteredList([]);
+  }, [openSearch]);
+
   const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSearchText(e.target.value);
     setFilteredList(

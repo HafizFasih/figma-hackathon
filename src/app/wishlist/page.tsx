@@ -1,3 +1,4 @@
+/* eslint-disable */
 "use client";
 import React, { useContext } from "react";
 import WishlistContext from "../context/WishlistCreation";

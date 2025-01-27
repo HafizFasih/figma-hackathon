@@ -23,10 +23,9 @@ const SearchList = ({
       <div className="absolute z-50 top-search left-0 h-60 w-48 bg-lightGray border border-black overflow-y-scroll">
         <ul>
           {list.map(({ name, category, _id, imageUrl }, ind) => (
-            <Link href={`/products/${category}/${_id}`}>
+            <Link key={ind} href={`/products/${category}/${_id}`}>
               <li
                 onClick={() => setSearch(false)}
-                key={ind}
                 className="ml-2 my-1 text-sm flex items-center gap-1"
               >
                 <span className="relative h-8 w-8">
